@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emprestar Livros</title>
+    <link rel="stylesheet" href="/public/view/css/emprestimo.css"> <!-- Link para o CSS -->
+    <link rel="icon" type="image/png" href="/public/imagens/vovo3.png"> <!-- Ícone do site -->
+</head>
+<body>
+    <header> Biblioteca da Vovó </header>
+    <nav>
+        <a href="../interface/site.html">Início</a>
+        <div class="dropdown">
+            <a href="#">Serviços</a>
+            <div class="dropdown-content">
+                <a href="cadastro de livros.html">Adicionar livro</a>
+                <a href="emprestimo_livro.html">Emprestar Livro</a>
+            </div>
+        </div>
+        <a href="../contato/contato.html">Contato</a>
+    </nav>
+
+    <main>
+        <div class="container">
+            <h1>Emprestar Livros</h1>
+            <div id="loan-form">
+                <label for="loan-title">Título do Livro:</label>
+                <input type="text" id="loan-title" required>
+
+                <label for="loan-user">Nome do Usuário:</label>
+                <input type="text" id="loan-user" required>
+
+                <label for="loan-date">Data de Devolução:</label>
+                <input type="date" id="loan-date" required>
+
+                <button id="botao_emprestar">Emprestar Livro</button>
+            </div>
+
+            <h2>Livros Emprestados</h2>
+            <ul id="loan-list"></ul>
+
+            <h1>Devolver Livros</h1>
+            <div id="return-form">
+                <label for="return-title">Título do Livro:</label>
+                <input type="text" id="return-title" required>
+
+                <button id="botao_devolver">Devolver Livro</button>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="/public/JS/emprestimo.js"></script> <!-- Script TypeScript -->
+    <footer>
+        <p>&copy; 2024 Projeto Biblioteca</p>
+    </footer>
+</body>
+</html>

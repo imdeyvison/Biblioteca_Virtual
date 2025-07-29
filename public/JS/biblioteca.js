@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.bibliotecaBD = exports.Biblioteca = void 0;
-class Biblioteca {
+export class Biblioteca {
     constructor() {
         this.livros = []; // Inicializa o array 'livros' como vazio quando uma nova instância de 'Biblioteca' é criada.
     }
@@ -22,5 +19,4 @@ class Biblioteca {
         return this.livros; // Retorna o array de livros armazenados.
     }
 }
-exports.Biblioteca = Biblioteca;
-exports.bibliotecaBD = new Biblioteca(); // Cria e exporta uma instância da classe 'Biblioteca' chamada 'bibliotecaBD' para uso em outros módulos.
+export const bibliotecaBD = new Biblioteca(); // Cria e exporta uma instância da classe 'Biblioteca' chamada 'bibliotecaBD' para uso em outros módulos.

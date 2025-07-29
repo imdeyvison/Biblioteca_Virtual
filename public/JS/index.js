@@ -1,7 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const biblioteca_js_1 = require("./biblioteca.js"); // Importa o objeto 'bibliotecaBD' do módulo 'biblioteca.js'.
-const livro_js_1 = require("./livro.js"); // Importa a classe 'Livro' do módulo 'livro.js'.
+import { bibliotecaBD } from "./biblioteca.js"; // Importa o objeto 'bibliotecaBD' do módulo 'biblioteca.js'.
+import { Livro } from "./livro.js"; // Importa a classe 'Livro' do módulo 'livro.js'.
 // Obtém referências aos elementos HTML pelos seus IDs
 let botaoAddLivro = document.getElementById('botao_adicionar'); // Botão para adicionar um livro
 let inputTitle = document.getElementById('title'); // Campo de entrada para o título do livro
@@ -24,13 +22,13 @@ function addLivro() {
     let generoLivro = inputGenre.value; // Obtém o gênero do livro do campo de entrada
     let isbnLivro = inputIsbn.value; // Obtém o ISBN do livro do campo de entrada
     // Adiciona o novo livro à biblioteca
-    biblioteca_js_1.bibliotecaBD.adicionarLivro(new livro_js_1.Livro(tituloLivro, autorLivro, isbnLivro, generoLivro, anoLivro));
-    console.log(biblioteca_js_1.bibliotecaBD); // Exibe a biblioteca no console
+    bibliotecaBD.adicionarLivro(new Livro(tituloLivro, autorLivro, isbnLivro, generoLivro, anoLivro));
+    console.log(bibliotecaBD); // Exibe a biblioteca no console
 }
 // Função para listar todos os livros na tela
 function listLivros() {
     let livrosHtml = ''; // String para armazenar o HTML da lista de livros
-    let livros = biblioteca_js_1.bibliotecaBD.listarLivros(); // Obtém a lista de livros da biblioteca
+    let livros = bibliotecaBD.listarLivros(); // Obtém a lista de livros da biblioteca
     // Itera sobre todos os livros
     for (let i = 0; i < livros.length; i++) {
         const livro = livros[i]; // Obtém o livro atual
@@ -43,25 +41,25 @@ function listLivros() {
 // Função para remover um livro da biblioteca
 function removeLivro() {
     let tituloRemover = inputRemoveTitle.value; // Obtém o título do livro a ser removido
-    let resultado = biblioteca_js_1.bibliotecaBD.removerLivro(tituloRemover); // Remove o livro e armazena o resultado
+    let resultado = bibliotecaBD.removerLivro(tituloRemover); // Remove o livro e armazena o resultado
     console.log(resultado); // Exibe o resultado da remoção no console
 }
 // Função para popular a biblioteca com livros pré-definidos
 function popularBiblioteca() {
     // Adiciona uma série de livros à biblioteca com informações específicas
-    biblioteca_js_1.bibliotecaBD.adicionarLivro(new livro_js_1.Livro('Dom Casmurro', 'Machado de Assis', '978-8520918891', 'Literatura Brasileira', 1899));
-    biblioteca_js_1.bibliotecaBD.adicionarLivro(new livro_js_1.Livro('A Revolução dos Bichos', 'George Orwell', '978-0451526342', 'Satírica', 1945));
-    biblioteca_js_1.bibliotecaBD.adicionarLivro(new livro_js_1.Livro('O Senhor dos Anéis: A Sociedade do Anel', 'J.R.R. Tolkien', '978-0261103573', 'Fantasia', 1954));
-    biblioteca_js_1.bibliotecaBD.adicionarLivro(new livro_js_1.Livro('Moby Dick', 'Herman Melville', '978-1503280786', 'Aventura', 1851));
-    biblioteca_js_1.bibliotecaBD.adicionarLivro(new livro_js_1.Livro('A Divina Comédia', 'Dante Alighieri', '978-0553213393', 'Épico', 1320));
-    biblioteca_js_1.bibliotecaBD.adicionarLivro(new livro_js_1.Livro('Cem Anos de Solidão', 'Gabriel Garcia Marquez', '978-0060883287', 'Realismo Mágico', 1967));
-    biblioteca_js_1.bibliotecaBD.adicionarLivro(new livro_js_1.Livro('Crime e Castigo', 'Fiódor Dostoiévski', '978-0143058144', 'Ficção Psicológica', 1866));
-    biblioteca_js_1.bibliotecaBD.adicionarLivro(new livro_js_1.Livro('Orgulho e Preconceito', 'Jane Austen', '978-0143105428', 'Romance', 1813));
+    bibliotecaBD.adicionarLivro(new Livro('Dom Casmurro', 'Machado de Assis', '978-8520918891', 'Literatura Brasileira', 1899));
+    bibliotecaBD.adicionarLivro(new Livro('A Revolução dos Bichos', 'George Orwell', '978-0451526342', 'Satírica', 1945));
+    bibliotecaBD.adicionarLivro(new Livro('O Senhor dos Anéis: A Sociedade do Anel', 'J.R.R. Tolkien', '978-0261103573', 'Fantasia', 1954));
+    bibliotecaBD.adicionarLivro(new Livro('Moby Dick', 'Herman Melville', '978-1503280786', 'Aventura', 1851));
+    bibliotecaBD.adicionarLivro(new Livro('A Divina Comédia', 'Dante Alighieri', '978-0553213393', 'Épico', 1320));
+    bibliotecaBD.adicionarLivro(new Livro('Cem Anos de Solidão', 'Gabriel Garcia Marquez', '978-0060883287', 'Realismo Mágico', 1967));
+    bibliotecaBD.adicionarLivro(new Livro('Crime e Castigo', 'Fiódor Dostoiévski', '978-0143058144', 'Ficção Psicológica', 1866));
+    bibliotecaBD.adicionarLivro(new Livro('Orgulho e Preconceito', 'Jane Austen', '978-0143105428', 'Romance', 1813));
 }
 // Função para filtrar livros com base no termo de busca
 function filtrarLivros() {
     let termoDeBusca = searchInput.value; // Obtém o termo de busca do campo de entrada
-    let livros = biblioteca_js_1.bibliotecaBD.listarLivros(); // Obtém a lista de livros da biblioteca
+    let livros = bibliotecaBD.listarLivros(); // Obtém a lista de livros da biblioteca
     let livrosFiltradosHtml = ''; // String para armazenar o HTML dos livros filtrados
     // Itera sobre todos os livros
     for (let i = 0; i < livros.length; i++) {

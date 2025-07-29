@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Livros</title>
+    <link rel="stylesheet" href="/public/view/css/adicionar_livro.css"> <!-- Serve para linkar o css ao html -->
+    <link rel="website icon" type="png" href="/public/imagens/vovo3.png"> <!-- Serve para mudar o ícone do site-->
+</head>
+<body class="main-body">
+    <header> Biblioteca da Vovó </header> <!-- É o cabeçalho-->
+    <nav>
+        <a href="../interface/site.html">Início</a>
+        <div class="dropdown">
+            <a href="#"> Serviços</a>
+            <div class="dropdown-content">
+                <a href="cadastro de livros.html">Adicionar livro</a>
+                <a href="emprestimo_livro.html">Emprestar Livro</a>
+            </div>
+        </div>
+        <a href="../contato/contato.html">Contato</a>
+    </nav>
+
+    <div class="container">
+        <h1>Cadastro de Livros</h1>
+        <!-- Formulário para adicionar livros -->
+        <div id="book-form">
+            <label for="titulo">Título:</label>
+            <input type="text" id="title" required>
+
+            <label for="ano_de_publicacao">Ano de Publicação:</label>
+            <input type="number" id="year" required>
+
+            <label for="autor">Autor:</label>
+            <input type="text" id="author" required>
+
+            <label for="genero">Gênero:</label>
+            <input type="text" id="genre" required>
+
+            <label for="ISBN">ISBN:</label>
+            <input type="text" id="isbn" required>
+
+            <button id="botao_adicionar">Adicionar Livro</button>
+        </div>
+
+        <!-- Formulário para remover livros -->
+        <div>
+            <label for="remove-title">Título do livro a remover:</label>
+            <input type="text" id="remove-title" required>
+            <button id="botao_remover">Remover Livro</button>
+        </div>
+<br>
+        <!-- Formulário para listar livros -->
+        <div>
+            <button id="list-books">Listar Livros</button>
+            <ul id="book-list"></ul>
+        </div>
+
+        <!-- Barra de pesquisa -->
+        <div>
+            <label for="search">Buscar Livros:</label>
+            <input type="text" id="search" placeholder="Buscar por título, autor, gênero ou ano">
+            <button id="search-button">Pesquisar</button>
+        </div>
+
+        <!-- Lista de livros filtrados -->
+        <div>
+            <ul id="filtered-list"></ul>
+        </div>
+    </div>
+
+    <script type="module" src="/public/JS/index.js"></script>
+    <footer>
+        <p>&copy; 2024 Projeto Biblioteca</p>
+    </footer>
+</body>
+</html>

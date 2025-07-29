@@ -1,0 +1,148 @@
+header{
+    background-color: #506c60; /* Muda a cor do fundo da header */
+    color: antiquewhite; /* Muda a cor do texto da header */
+    text-align: center;  /* Muda o alinhamento do texto da header */
+    font-size: 6rem; /* Muda o tamanho do texto da header */
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+    margin: 0;
+}
+body{
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    height: auto; /* Ajusta a altura do corpo */
+ 
+    
+}
+/* Até aqui foi só pra ajeitar o header*/
+
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Ajusta o espaçamento horizontal entre as palavras*/
+    height: 50px; /* Ajusta o espaçamento vertical das palavras com o header*/
+    justify-content: center;
+    background-color: #506c60;
+}
+
+a{
+    text-decoration: none; /* tira o sublinhado dos links*/
+    position:relative;
+    cursor: pointer;
+    color:antiquewhite;
+    font-size: 17px;
+    padding: 0.5rem 1rem;
+    transition: color 0.25s;
+    z-index: 2; /* Eleva o link acima do pseudoelemento */
+}
+
+a::after {
+    position:absolute;
+    content: "";
+    inset: 0;
+    background: antiquewhite;
+    scale: 1 0;
+    z-index: -1;
+    transition: 0.45s;
+    border-radius: 10px;
+    /* Mantém o pseudoelemento atrás do link */
+}
+/* Aqui é para mudarmos a cor do texto quando o cursor passa em cima do botão */
+a:hover {
+    color:#506c60;
+     /* Mantém o pseudoelemento atrás do link */
+}
+
+a:hover::after{
+    scale: 1 1;
+}
+
+/* Até aqui é só pra adicionar o efeito bonitinho à navbar */
+
+/* Agora vamos estilizar o efeito dropdown dos itens da navbar: */
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute; /* Isso deixou os itens um abaixo do outro*/
+    background-color: #506c60;
+    min-width: 160px;
+    box-shadow: 0px 8px 166px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.dropdown-content a {
+    color:antiquewhite;
+    padding:12px 16px;
+    text-decoration: none; /*isso tirou o sublinhado dos links */
+    display: block;
+    z-index: 2;
+}
+
+.dropdown-content a:hover{
+    background-color: antiquewhite;
+    color: black;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+
+/* A partir daqui serve somente para ajeitar  página de contato*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: antiquewhite;
+    color: #506c60;
+    margin: 0;
+    padding: 0;
+}
+
+
+main {
+    padding: 1em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-list {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-list h2 {
+    color: #506c60;
+}
+
+.contact-item {
+    margin-bottom: 1em;
+}
+
+.contact-item h3 {
+    margin: 0;
+    color: #506c60;
+}
+
+.contact-item p {
+    margin: 0.5em 0;
+}
+
+footer {
+    background-color: #506c60;
+    color: antiquewhite;
+    text-align: center;
+    padding: 0.05em;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+

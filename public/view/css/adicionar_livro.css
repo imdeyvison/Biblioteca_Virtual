@@ -1,0 +1,162 @@
+/* Estilo para o header */
+header {
+    background-color: #506c60; /* Muda a cor do fundo da header */
+    color: antiquewhite; /* Muda a cor do texto da header */
+    text-align: center;  /* Muda o alinhamento do texto da header */
+    font-size: 6rem; /* Muda o tamanho do texto da header */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+    margin: 0;
+}
+
+/* Estilo geral do corpo */
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo da barra de navegação */
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Ajusta o espaçamento horizontal entre os links */
+    height: 50px; /* Ajusta o espaçamento vertical dos links com o header */
+    justify-content: center;
+    background-color: #506c60;
+}
+
+a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    position: relative;
+    cursor: pointer;
+    color: antiquewhite;
+    font-size: 17px;
+    padding: 0.5rem 1rem;
+    transition: color 0.25s;
+    z-index: 2; /* Eleva o link acima do pseudoelemento */
+}
+
+a::after {
+    position: absolute;
+    content: "";
+    inset: 0;
+    background: antiquewhite;
+    scale: 1 0;
+    z-index: -1;
+    transition: 0.45s;
+    border-radius: 10px;
+    /* Mantém o pseudoelemento atrás do link */
+}
+
+/* Muda a cor do texto quando o cursor passa sobre o link */
+a:hover {
+    color: #506c60;
+}
+
+a:hover::after {
+    scale: 1 1;
+}
+
+/* Estilização do dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #506c60;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.dropdown-content a {
+    color: antiquewhite;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    z-index: 2;
+}
+
+.dropdown-content a:hover {
+    background-color: antiquewhite;
+    color: black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Estilo da área principal */
+.main-body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(250, 235, 215, 0.397); /* Fundo específico para a página principal */
+}
+
+/* Container para o conteúdo principal */
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto; /* Centraliza horizontalmente */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilização dos formulários */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 97%;
+}
+
+/* Estilização dos botões */
+button {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #506c60;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #cec3a7;
+}
+
+footer {
+    background-color: #506c60;
+    color: antiquewhite;
+    text-align: center;
+    padding: 0.05em;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
