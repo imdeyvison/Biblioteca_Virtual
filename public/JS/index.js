@@ -1,26 +1,26 @@
-import { bibliotecaBD } from "./biblioteca.js"; // Importa o objeto 'bibliotecaBD' do módulo 'biblioteca.js'.
-import { Livro } from "./livro.js"; // Importa a classe 'Livro' do módulo 'livro.js'.
+import { bibliotecaBD } from "./biblioteca.js";
+import { Livro } from "./livro.js";
 // Obtém referências aos elementos HTML pelos seus IDs
-let botaoAddLivro = document.getElementById('botao_adicionar'); // Botão para adicionar um livro
-let inputTitle = document.getElementById('title'); // Campo de entrada para o título do livro
-let inputYear = document.getElementById('year'); // Campo de entrada para o ano de publicação
-let inputAuthor = document.getElementById('author'); // Campo de entrada para o autor do livro
-let inputGenre = document.getElementById('genre'); // Campo de entrada para o gênero do livro
-let inputIsbn = document.getElementById('isbn'); // Campo de entrada para o ISBN do livro
-let botaoListarLivros = document.getElementById('list-books'); // Botão para listar todos os livros
-let listaLivros = document.getElementById('book-list'); // Lista onde os livros serão exibidos
-let botaoRemoverLivro = document.getElementById('botao_remover'); // Botão para remover um livro
-let inputRemoveTitle = document.getElementById('remove-title'); // Campo de entrada para o título do livro a ser removido
-let searchInput = document.getElementById('search'); // Campo de entrada para o termo de busca
-let searchButton = document.getElementById('search-button'); // Botão para executar a busca
-let filteredList = document.getElementById('filtered-list'); // Lista onde os livros filtrados serão exibidos
-// Função para adicionar um livro à biblioteca
+let botaoAddLivro = document.getElementById('botao_adicionar');
+let inputTitle = document.getElementById('title');
+let inputYear = document.getElementById('year');
+let inputAuthor = document.getElementById('author');
+let inputGenre = document.getElementById('genre');
+let inputIsbn = document.getElementById('isbn');
+let botaoListarLivros = document.getElementById('list-books');
+let listaLivros = document.getElementById('book-list');
+let botaoRemoverLivro = document.getElementById('botao_remover');
+let inputRemoveTitle = document.getElementById('remove-title');
+let searchInput = document.getElementById('search');
+let searchButton = document.getElementById('search-button');
+let filteredList = document.getElementById('filtered-list');
+// Função para adicionar um livro à biblioteca nos campos de entrada respectivos
 function addLivro() {
-    let tituloLivro = inputTitle.value; // Obtém o título do livro do campo de entrada
-    let anoLivro = parseInt(inputYear.value); // Obtém o ano do livro e converte para número
-    let autorLivro = inputAuthor.value; // Obtém o autor do livro do campo de entrada
-    let generoLivro = inputGenre.value; // Obtém o gênero do livro do campo de entrada
-    let isbnLivro = inputIsbn.value; // Obtém o ISBN do livro do campo de entrada
+    let tituloLivro = inputTitle.value;
+    let anoLivro = parseInt(inputYear.value);
+    let autorLivro = inputAuthor.value;
+    let generoLivro = inputGenre.value;
+    let isbnLivro = inputIsbn.value;
     // Adiciona o novo livro à biblioteca
     bibliotecaBD.adicionarLivro(new Livro(tituloLivro, autorLivro, isbnLivro, generoLivro, anoLivro));
     console.log(bibliotecaBD); // Exibe a biblioteca no console
@@ -40,13 +40,12 @@ function listLivros() {
 }
 // Função para remover um livro da biblioteca
 function removeLivro() {
-    let tituloRemover = inputRemoveTitle.value; // Obtém o título do livro a ser removido
-    let resultado = bibliotecaBD.removerLivro(tituloRemover); // Remove o livro e armazena o resultado
-    console.log(resultado); // Exibe o resultado da remoção no console
+    let tituloRemover = inputRemoveTitle.value;
+    let resultado = bibliotecaBD.removerLivro(tituloRemover);
+    console.log(resultado);
 }
-// Função para popular a biblioteca com livros pré-definidos
+// Função para "popular" a biblioteca  um banco de dados fake de alguns livros 
 function popularBiblioteca() {
-    // Adiciona uma série de livros à biblioteca com informações específicas
     bibliotecaBD.adicionarLivro(new Livro('Dom Casmurro', 'Machado de Assis', '978-8520918891', 'Literatura Brasileira', 1899));
     bibliotecaBD.adicionarLivro(new Livro('A Revolução dos Bichos', 'George Orwell', '978-0451526342', 'Satírica', 1945));
     bibliotecaBD.adicionarLivro(new Livro('O Senhor dos Anéis: A Sociedade do Anel', 'J.R.R. Tolkien', '978-0261103573', 'Fantasia', 1954));
@@ -63,10 +62,10 @@ function filtrarLivros() {
     let livrosFiltradosHtml = ''; // String para armazenar o HTML dos livros filtrados
     // Itera sobre todos os livros
     for (let i = 0; i < livros.length; i++) {
-        let livro = livros[i]; // Obtém o livro atual
-        let titulo = livro.titulo; // Obtém o título do livro
-        let autor = livro.autor; // Obtém o autor do livro
-        let genero = livro.genero; // Obtém o gênero do livro
+        let livro = livros[i];
+        let titulo = livro.titulo;
+        let autor = livro.autor;
+        let genero = livro.genero;
         let anoDePublicacao = livro.ano_de_publicacao.toString(); // Converte o ano de publicação para string
         // Verifica se o termo de busca é exatamente igual a qualquer um dos detalhes
         if (titulo === termoDeBusca ||

@@ -1,21 +1,23 @@
 export class Biblioteca {
     constructor() {
-        this.livros = []; // Inicializa o array 'livros' como vazio quando uma nova instância de 'Biblioteca' é criada.
+        this.livros = [];
     }
     adicionarLivro(livro) {
         this.livros.push(livro); // Adiciona o objeto 'livro' ao array 'livros'.
     }
+    // Método para remover um livro da biblioteca pelo título
     removerLivro(titulo) {
         for (let i = 0; i < this.livros.length; i++) { // Itera sobre o array de livros.
             if (this.livros[i].titulo === titulo) { // Verifica se o título do livro atual corresponde ao título fornecido.
-                this.livros.splice(i, 1); // Remove o livro do array 'livros' na posição 'i'.
-                return 'Livro removido com sucesso'; // Retorna uma mensagem indicando que a remoção foi bem-sucedida.
+                this.livros.splice(i, 1);
+                return 'Livro removido com sucesso';
             }
         }
-        return 'Livro não encontrado'; // Retorna uma mensagem indicando que o livro não foi encontrado.
+        return 'Livro não encontrado';
     }
+    // Método para listar todos os livros da biblioteca
     listarLivros() {
-        console.log('livros na biblioteca:', this.livros); // Exibe no console a lista de livros armazenados.
+        console.log('livros na biblioteca:', this.livros);
         return this.livros; // Retorna o array de livros armazenados.
     }
 }
