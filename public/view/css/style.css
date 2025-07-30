@@ -102,3 +102,58 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+/* Estilo para o contêiner da galeria */
+.gallery-container {
+    display: flex;
+    justify-content: center; /* Centraliza a galeria horizontalmente */
+    align-items: center; /* Centraliza a galeria verticalmente, se necessário */
+    height: 50vh; /* Ou ajuste conforme necessário */
+    margin: 0; /* Remove a margem padrão */
+    padding: 0; /* Remove o padding padrão */
+}
+
+/* A partir daqui para baixo é só para criar a galeria de cards 3D*/
+.list {
+    display: flex;
+    gap: 0.25rem;
+    transform-style: preserve-3d;
+    list-style-type: none;
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+  }
+
+.item {
+    position: relative;
+    width: 220px;
+    aspect-ratio: 3 / 4;
+    border-radius: 0.5rem;
+    background-size: cover;
+    background-position: center;
+    transition: margin 0.5s, transform 0.5s;
+}
+
+.item:nth-of-type(1) { background-image: url('/public/imagens/baleia.png'); }
+.item:nth-of-type(2) { background-image: url('/public/imagens/anel.jpg'); }
+.item:nth-of-type(3) { background-image: url('/public/imagens/bichos.jpg'); }
+.item:nth-of-type(4) { background-image: url('/public/imagens/casmurro.jpg'); }
+.item:nth-of-type(5) { background-image: url('/public/imagens/comedia.jpg'); }
+
+.item:hover {
+    transform: perspective(500px) rotateY(0) scale(1.2);
+}
+
+.item:hover ~ .item {
+    transform: perspective(500px) rotateY(-45deg) scale(0.95);
+}
+
+.item::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    aspect-ratio: inherit;
+    border-radius: inherit;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
