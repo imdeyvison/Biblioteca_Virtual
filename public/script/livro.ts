@@ -17,11 +17,11 @@ export abstract class Publicacao {
     isbn: string;
     genero: string;
     ano_de_publicacao: number;
-    private static contador: number = 0;
     id: number;
-    emprestado: boolean = false;// Atributo que indica se o livro está emprestado ou não (inicialmente false)
-    emprestadoPara?: string;// Atributo opcional que armazena o nome da pessoa para quem o livro foi emprestado (pode ser undefined)
-    dataDevolucao?: Date;// Atributo opcional que armazena a data de devolução do livro (pode ser undefined)
+    private static contador: number = 0; // Propriedade estática que mantém o contador de livros, usado para gerar IDs únicos automaticamente
+    emprestado: boolean = false; // Atributo que indica se o livro está emprestado ou não 
+    emprestadoPara?: string; // Atributo que armazena o nome da pessoa para quem o livro foi emprestado 
+    dataDevolucao?: Date; // Atributo que armazena a data de devolução do livro 
   
     constructor(
       titulo: string,
@@ -42,11 +42,7 @@ export abstract class Publicacao {
     }
   
     exibirInformacoes(): void {
-      console.log(`📚 Livro: ${this.titulo}
-  Autor: ${this.autor}
-  ISBN: ${this.isbn}
-  Gênero: ${this.genero}
-  Ano: ${this.ano_de_publicacao}`);
+      console.log(`Livro: ${this.titulo} Autor: ${this.autor} ISBN: ${this.isbn} Gênero: ${this.genero} Ano: ${this.ano_de_publicacao}`);
     }
   }
   
