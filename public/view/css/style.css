@@ -1,5 +1,5 @@
 header{
-    background-color: #506c60; /* Muda a cor do fundo da header */
+    background-color: #e50953; /* Muda a cor do fundo da header */
     color: antiquewhite; /* Muda a cor do texto da header */
     text-align: center;  /* Muda o alinhamento do texto da header */
     font-size: 6rem; /* Muda o tamanho do texto da header */
@@ -11,6 +11,7 @@ body{
     padding: 0;
     margin: 0;
     height: auto; /* Ajusta a altura do corpo */
+    background-color: antiquewhite;
  
     
 }
@@ -23,7 +24,7 @@ nav{
     gap: 30px; /* Ajusta o espaçamento horizontal entre as palavras*/
     height: 50px; /* Ajusta o espaçamento vertical das palavras com o header*/
     justify-content: center;
-    background-color: #506c60;
+    background-color: #e50953;
 }
 
 a{
@@ -50,7 +51,7 @@ a::after {
 }
 /* Aqui é para mudarmos a cor do texto quando o cursor passa em cima do botão */
 a:hover {
-    color:#506c60;
+    color:#e50953;
      /* Mantém o pseudoelemento atrás do link */
 }
 
@@ -69,7 +70,7 @@ a:hover::after{
 .dropdown-content{
     display: none;
     position: absolute; /* Isso deixou os itens um abaixo do outro*/
-    background-color: #506c60;
+    background-color: #e50953;
     min-width: 160px;
     box-shadow: 0px 8px 166px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -94,13 +95,15 @@ a:hover::after{
 }
 
 footer {
-    background-color: #506c60;
+    background-color: #e50953;
     color: antiquewhite;
-    text-align: center;
-    padding: 0.05em;
+    text-align:justify;
+    padding: 0.5em;
     position: fixed;
     width: 100%;
     bottom: 0;
+    font-size: 9px;
+    
 }
 
 /* Estilo para o contêiner da galeria */
@@ -157,3 +160,61 @@ footer {
     opacity: 0;
     transition: opacity 0.5s;
 }
+
+.botao-adicionar, .botao-emprestar {
+    display: inline-block;
+    background-color: #e50953; /* Cor oficial do WhatsApp */
+    color: white;
+    padding: 10px;
+    border-radius: 11px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+  }
+
+  button:hover {
+    background-color: #640524;
+}
+
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+        font-size: 160%; /* Reduz o tamanho do texto */
+      }
+  
+    .gallery-container {
+      height: auto;
+      padding: 10px;
+      overflow-x: auto;
+    }
+  
+    .list {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 0.25rem;
+      padding-bottom: 10px;
+    }
+  
+    .item {
+      flex: 0 0 auto;
+      width: 200px; /* Redução leve (antes era 220px) */
+      aspect-ratio: 3 / 4;
+    }
+  
+    /* Opcional: suaviza os efeitos 3D no mobile */
+    .item:hover {
+      transform: perspective(500px) scale(1.05); /* Um efeito mais sutil */
+    }
+  
+    .item:hover ~ .item {
+      transform: none;
+    }
+  }
+  
+  
