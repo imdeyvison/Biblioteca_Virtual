@@ -82,9 +82,9 @@ Biblioteca_Virtual/
 ├── package.json
 └── LICENSE
 
-```
+---
 
-🧩 Funcionalidades
+## 🧩 Funcionalidades
 📘 1. Cadastro de Livros (livro.ts, biblioteca.ts)
 Cada livro é representado por uma classe Livro, com:
 
