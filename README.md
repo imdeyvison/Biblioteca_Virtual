@@ -4,22 +4,12 @@ Este é um projeto de uma **Biblioteca Virtual** desenvolvido com **HTML**, **CS
 
 ---
 
-## 🚀 Funcionalidades
-
-- Cadastro de livros com título, autor, ISBN, gênero e ano de publicação
-- Empréstimo de livros
-- Exibição de acervo de forma organizada
-- Interface amigável com múltiplas páginas HTML
-
----
-
 ## 🧰 Tecnologias Utilizadas
 
 - HTML5
 - CSS3
 - TypeScript
 - Node.js (para gerenciamento de dependências)
-- Supabase (em desenvolvimento futuro)
 
 ---
 
@@ -91,7 +81,77 @@ Biblioteca_Virtual/
 ├── tsconfig.json
 ├── package.json
 └── LICENSE
+
 ```
+
+🧩 Funcionalidades
+📘 1. Cadastro de Livros (livro.ts, biblioteca.ts)
+Cada livro é representado por uma classe Livro, com:
+
+Título
+
+Autor
+
+ISBN
+
+Gênero
+
+Ano de publicação
+
+ID único (gerado automaticamente)
+
+A seguir é exemplicado a adição de um livro à lista de livros: 
+
+
+A classe Biblioteca gerencia um array de livros, permitindo:
+
+adicionarLivro(livro) – adiciona um novo livro à lista
+![alt text](/public/imagens/cadastro.png)
+removerLivro(id) – remove um livro pelo ID
+![alt text](/public/imagens/remover.png)
+listarLivros() – retorna todos os livros cadastrados
+![alt text](/public/imagens/listar.png)
+
+📚 2. Exibição de Livros na Página (index.ts)
+O arquivo index.ts manipula o DOM para:
+
+Exibir a lista de livros dinamicamente no HTML
+
+![alt text](/public/imagens/inicial.png)
+
+🔄 3. Empréstimo de Livros (emprestimo.ts)
+Simula o processo de empréstimo, com:
+
+Nome do usuário
+
+ID do livro
+
+Data de devolução prevista
+
+Realiza validações para garantir que:
+
+Todos os campos estejam preenchidos
+
+O ID do livro exista
+
+Ao confirmar o empréstimo, exibe uma mensagem no console de emprestimo como "true"
+
+![alt text](/public/imagens/emprestimo.png)
+
+📨 4. Página de Contato (contato.html)
+Contém um formulário com campos:
+
+Nome
+
+E-mail
+
+Mensagem
+
+Essa funcionalidade é apenas ilustrativa (não envia dados reais)
+
+![alt text](/public/imagens/contato.png)
+---
+
 
 ---
 
@@ -101,4 +161,9 @@ Este projeto está licenciado sob os termos da licença MIT. Consulte o arquivo 
 
 ---
 
-Criado para fins educacionais.
+📌 Observações
+Este projeto não possui backend ou banco de dados.
+
+Os dados são armazenados apenas em memória no navegador enquanto a página está aberta.
+
+Por fim, este projeto foi criado para fins educacionais.

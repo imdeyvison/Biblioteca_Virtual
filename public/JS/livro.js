@@ -24,10 +24,22 @@ export class Livro extends Publicacao {
 }
 Livro.contador = 0; // Propriedade estática que mantém o contador de livros, usado para gerar IDs únicos automaticamente
 // Criando instâncias da classe Livro
-let livro1 = new Livro("Dom Casmurro", "Machado de Assis", "978-8520918891", "Romance", 1899);
-let livro2 = new Livro("1984", "George Orwell", "978-0451524935", "Ficção Científica", 1949);
+//let livro1 = new Livro(
+//"Dom Casmurro",
+//"Machado de Assis",
+// "978-8520918891",
+//"Romance",
+//1899
+//);
+//let livro2 = new Livro(
+//"1984",
+//"George Orwell",
+// "978-0451524935",
+// "Ficção Científica",
+// 1949
+//);
 // Usando métodos herdados e sobrescritos
-livro1.exibirResumo(); // Saída: Dom Casmurro, de Machado de Assis
-livro1.exibirInformacoes(); // Informações completas no console
-livro2.exibirResumo();
-livro2.exibirInformacoes();
+//livro1.exibirResumo();        // Saída: Dom Casmurro, de Machado de Assis
+//livro1.exibirInformacoes();   // Informações completas no console
+//livro2.exibirResumo();
+//livro2.exibirInformacoes();
