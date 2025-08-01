@@ -66,25 +66,8 @@ Isso irá gerar os arquivos JavaScript na pasta de destino (caso esteja configur
 
 ---
 
-## 📁 Estrutura de Pastas (simplificada)
-
-```
-Biblioteca_Virtual/
-├── public/
-│   └── view/
-│       ├── html/
-│       │   ├── cadastro de livros.html
-│       │   ├── emprestimo_livro.html
-│       │   ├── contato.html
-│       │   └── site.html
-│       └── css/
-├── tsconfig.json
-├── package.json
-└── LICENSE
-
----
-
 ## 🧩 Funcionalidades
+
 📘 1. Cadastro de Livros (livro.ts, biblioteca.ts)
 Cada livro é representado por uma classe Livro, com:
 
