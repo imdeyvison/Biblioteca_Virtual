@@ -30,3 +30,4 @@ export class Biblioteca {
 }
 
 export const bibliotecaBD = new Biblioteca(); // Cria e exporta uma instância da classe 'Biblioteca' chamada 'bibliotecaBD' para uso em outros módulos.
+
