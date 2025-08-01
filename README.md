@@ -83,16 +83,19 @@ Ano de publicação
 
 ID único (gerado automaticamente)
 
-A seguir é exemplicado a adição de um livro à lista de livros: 
-
 
 A classe Biblioteca gerencia um array de livros, permitindo:
 
 adicionarLivro(livro) – adiciona um novo livro à lista
+
 ![alt text](/public/imagens/cadastro.png)
+
 removerLivro(id) – remove um livro pelo ID
+
 ![alt text](/public/imagens/remover.png)
+
 listarLivros() – retorna todos os livros cadastrados
+
 ![alt text](/public/imagens/listar.png)
 
 📚 2. Exibição de Livros na Página (index.ts)
